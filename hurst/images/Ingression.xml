@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Containers>
+  <TemplateURL>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/hexchat.xml</TemplateURL>
+  <Beta>False</Beta>
+  <Category>Productivity: Tools:</Category>
+  <Name>Rover-Ingression</Name>
+  <Description>
+    [b]Description[/b][br]
+    
+  </Description>
+  <Overview>
+    Ingression Software manages income IQTT messages from the rover unit and publishes them to influxDb
+  </Overview>
+  <!-- <Support>https://forums.unraid.net/topic/81397-support-binhex-hexchat/</Support> -->
+  <ReadMe>https://github.com/hursty1/rover_ingression</ReadMe>
+  <!-- <Registry>https://registry.hub.docker.com/r/binhex/arch-hexchat/</Registry> -->
+  <GitHub>https://github.com/hursty1/rover_ingression</GitHub>
+  <Repository>hursty1/rover_ingression</Repository>
+  <!-- <Project>https://hexchat.github.io/</Project> -->
+  <BindTime>true</BindTime>
+  <Privileged>true</Privileged>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>1883</HostPort>
+        <ContainerPort>1883</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  
+  <Banner></Banner>
+  <!-- <Icon>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/images/hexchat-icon.png</Icon> -->
+  
+  <ExtraParams></ExtraParams>
+</Containers>
