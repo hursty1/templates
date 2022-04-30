@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Containers>
+  <TemplateURL>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/jenkins.xml</TemplateURL>
+  <Beta>False</Beta>
+  <Category>Productivity: Tools:</Category>
+  <Name>jenkins</Name>
+  <Description>
+    [b]Description[/b][br]
+    Jenkins is an open source continuous integration tool written in Java. The project was forked from Hudson after a dispute with Oracle. Jenkins provides continuous integration services for software development. It is a server-based system running in a servlet container such as Apache Tomcat.[br][br]
+    [b]Configuration[/b][br]
+    [b]/config[/b] This is where the application will store its configuration files, database and logs etc.[br][br]
+    [b]Documentation[/b][br]
+    https://github.com/binhex/documentation[br][br]
+  </Description>
+  <Overview>
+  Jenkins is an open source continuous integration tool written in Java. The project was forked from Hudson after a dispute with Oracle. Jenkins provides continuous integration services for software development. It is a server-based system running in a servlet container such as Apache Tomcat.
+  </Overview>
+  <Support>http://lime-technology.com/forum/index.php?topic=45839.0</Support>
+  <ReadMe>https://github.com/hursty1/jenkins-docker</ReadMe>
+  <GitHub>https://github.com/hursty1/jenkins-docker</GitHub>
+  <Repository>https://github.com/hursty1/jenkins-docker</Repository>
+  <Project>https://jenkins-ci.org/</Project>
+  <BindTime>true</BindTime>
+  <Privileged>true</Privileged>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8090</HostPort>
+        <ContainerPort>8090</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>4243</HostPort>
+        <ContainerPort>4243</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Environment>
+    <Variable>
+      <Name>JAVA_ARGS</Name>
+      <Value>-Xmx512m</Value>
+    </Variable>
+    <Variable>
+      <Name>JAVA_OPTS</Name>
+      <Value>-Dhudson.footerURL=http://mycompany.com</Value>
+    </Variable>
+    <Variable>
+      <Name>UMASK</Name>
+      <Value>000</Value>
+    </Variable>
+    <Variable>
+      <Name>PUID</Name>
+      <Value>99</Value>
+    </Variable>
+    <Variable>
+      <Name>PGID</Name>
+      <Value>100</Value>
+    </Variable>
+  </Environment>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/config</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:8090]/</WebUI>
+  <Icon>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/images/jenkins-icon.png</Icon>
+  <ExtraParams></ExtraParams>
+</Containers>
